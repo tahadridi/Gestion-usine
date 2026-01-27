@@ -1,0 +1,580 @@
+/* ====================== */
+/* 🌍 Global Styles       */
+/* ====================== */
+.admin-panel {
+font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
+  background-color: #f4f5f8;
+  padding: 30px 40px;
+  color: #333;
+}
+
+.admin-panel .page-title {
+  color: #18207A;
+  margin-bottom: 30px;
+  font-weight: 700;
+}
+
+/* ====================== */
+/* 📦 Cards & Sections    */
+/* ====================== */
+.admin-panel .filters-section,
+.admin-panel .add-user-section,
+.admin-panel .users-section {
+  border-radius: 10px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 1.2rem;
+  background: #ffffff;
+  padding: 25px 30px;
+  border: 1px solid #e5e7eb;
+}
+
+.admin-panel .filters-section:hover,
+.admin-panel .add-user-section:hover,
+.admin-panel .users-section:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+/* Section Titles */
+.admin-panel h2 {
+  color: #050607;
+  font-weight: 600;
+  font-size: 20px;
+  margin-bottom: 20px;
+  position: relative;
+  padding: 8px 15px;
+  background-color: rgba(24, 32, 122, 0.08);
+  border-radius: 8px;
+  border-left: 4px solid #18207A;
+  text-align: center;
+}
+
+/* ====================== */
+/* 🔍 Filter Controls     */
+/* ====================== */
+.admin-panel .filter-controls,
+.admin-panel .form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.admin-panel .filter-group {
+  flex: 1;
+  min-width: 160px;
+}
+
+.admin-panel .filter-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+  color: #475569;
+}
+
+/* Wrapper for select with icon */
+.admin-panel .select-box {
+  position: relative;
+  width: 100%;
+}
+
+.admin-panel .select-icon {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+  color: #555;
+  font-size: 16px;
+  pointer-events: none;
+}
+
+/* Bigger, modern select */
+.admin-panel .custom-select {
+  padding-left: 40px;
+  height: 44px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  transition: all 0.3s ease;
+  width: 100%;
+  background-color: #f8fafc;
+  color: #334155;
+  font-size: 14px;
+}
+
+/* Hover + focus effect */
+.admin-panel .custom-select:focus {
+  border-color: #18207A;
+  box-shadow: 0 0 6px rgba(24, 32, 122, 0.3);
+}
+
+/* ====================== */
+/* 🔍 Search Box          */
+/* ====================== */
+.admin-panel .search-box {
+  position: relative;
+  width: 100%;
+}
+
+.admin-panel .search-icon {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+  color: #888;
+  font-size: 16px;
+  pointer-events: none;
+}
+
+.admin-panel .search-input {
+  padding-left: 100px;
+  height: 44px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  width: 100%;
+  font-size: 14px;
+  background-color: #f8fafc;
+  color: #334155;
+}
+
+.admin-panel .search-input:focus {
+  border-color: #18207A;
+  box-shadow: 0 0 6px rgba(24, 32, 122, 0.3);
+  outline: none;
+}
+
+/* ====================== */
+/* 📝 Inputs & Selects    */
+/* ====================== */
+.admin-panel input[type="text"],
+.admin-panel input[type="email"],
+.admin-panel input[type="password"] {
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+  outline: none;
+  font-size: 14px;
+  transition: all 0.2s ease;
+  background-color: #f8fafc;
+  color: #334155;
+  height: 44px;
+}
+
+.admin-panel input:focus {
+  border-color: #818cf8;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+}
+
+.admin-panel .full-width {
+  flex: 1 1 100%;
+}
+
+/* Checkbox Label */
+.admin-panel .checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #475569;
+  height: 44px;
+}
+
+/* ====================== */
+/* 🎨 Professional Buttons */
+/* ====================== */
+    
+.admin-panel button, .admin-panel .btn {
+  font-size: 13px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition: all 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-weight: 600;
+  border: 1px solid;
+  cursor: pointer;
+  min-height: 36px;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Base button styles with subtle gradient */
+.admin-panel .btn-primary,
+.admin-panel .btn-danger,
+.admin-panel .btn-success,
+.admin-panel .btn-edit,
+.admin-panel .btn-secondary,
+.admin-panel .btn-add-modern {
+  background: linear-gradient(145deg, #ffffff, #f8fafc);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e2e8f0;
+  color: #334155;
+  position: relative;
+  z-index: 1;
+}
+
+.admin-panel .btn-primary::before,
+.admin-panel .btn-danger::before,
+.admin-panel .btn-success::before,
+.admin-panel .btn-edit::before,
+.admin-panel .btn-secondary::before,
+.admin-panel .btn-add-modern::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, currentColor, transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+/* Hover effects for all buttons */
+.admin-panel .btn-primary:hover::before,
+.admin-panel .btn-danger:hover::before,
+.admin-panel .btn-success:hover::before,
+.admin-panel .btn-edit:hover::before,
+.admin-panel .btn-secondary:hover::before,
+.admin-panel .btn-add-modern:hover::before {
+  opacity: 0.1;
+}
+
+/* Primary button - Professional blue */
+.admin-panel .btn-primary {
+  color: #18207A;
+  border-color: #18207A;
+}
+
+.admin-panel .btn-primary:hover {
+  background: #18207A;
+  color: white;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(24, 32, 122, 0.2);
+}
+
+/* Danger button - Professional red */
+.admin-panel .btn-danger {
+  color: #dc2626;
+  border-color: #dc2626;
+}
+
+.admin-panel .btn-danger:hover {
+  background: #dc2626;
+  color: white;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(220, 38, 38, 0.2);
+}
+
+/* Success button - Professional green */
+.admin-panel .btn-success {
+  color: #059669;
+  border-color: #059669;
+}
+
+.admin-panel .btn-success:hover {
+  background: #059669;
+  color: white;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(5, 150, 105, 0.2);
+}
+
+/* Edit button - Professional amber */
+.admin-panel .btn-edit {
+  color: #d97706;
+  border-color: #d97706;
+}
+
+.admin-panel .btn-edit:hover {
+  background: #d97706;
+  color: white;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(217, 119, 6, 0.2);
+}
+
+/* Secondary button - Professional gray */
+.admin-panel .btn-secondary {
+  color: #475569;
+  border-color: #94a3b8;
+}
+
+.admin-panel .btn-secondary:hover {
+  background: #64748b;
+  color: white;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(100, 116, 139, 0.2);
+}
+
+/* Modern Add button - Centered with professional style */
+.admin-panel .btn-add-modern {
+  color: #18207A;
+  border-color: #18207A;
+  margin: 20px auto;
+  display: block;
+  padding: 10px 24px;
+  background: linear-gradient(145deg, #ffffff, #f8fafc);
+  box-shadow: 0 4px 6px rgba(24, 32, 122, 0.1);
+}
+
+.admin-panel .btn-add-modern:hover {
+  background: #18207A;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(24, 32, 122, 0.15);
+}
+
+/* Button container for multiple buttons */
+.admin-panel .button-container {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin: 20px 0;
+  flex-wrap: wrap;
+}
+
+/* Compact button group for table actions */
+.admin-panel .button-group {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+/* Icon-only buttons for compact spaces */
+.admin-panel .btn-icon {
+  padding: 8px;
+  min-width: 36px;
+  min-height: 36px;
+}
+
+/* Disabled state for all buttons */
+.admin-panel button:disabled,
+.admin-panel .btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/* Loading state for buttons */
+.admin-panel .btn-loading {
+  position: relative;
+  color: transparent !important;
+}
+
+.admin-panel .btn-loading::after {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: currentColor;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Focus states for accessibility */
+.admin-panel button:focus,
+.admin-panel .btn:focus {
+  outline: 2px solid #18207A;
+  outline-offset: 2px;
+}
+
+/* ====================== */
+/* 📊 Table               */
+/* ====================== */
+.admin-panel .users-table-container {
+  overflow-x: auto;
+  border-radius: 8px;
+}
+
+.admin-panel .users-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 8px;
+  margin-top: 15px;
+}
+
+.admin-panel .users-table th,
+.admin-panel .users-table td {
+  padding: 12px 15px;
+  font-size: 14px;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.admin-panel .users-table thead th {
+  background-color: #f1f5f9;
+  color: #475569;
+  font-weight: 600;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.admin-panel .users-table tbody tr {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  transition: all 0.2s ease;
+}
+
+.admin-panel .users-table tbody tr:hover {
+  background-color: #f8fafc;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+/* Status Pills */
+.admin-panel .pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 12px;
+  border: 1px solid transparent;
+}
+
+.admin-panel .pill--success {
+  color: #16a34a;
+  background: rgba(22,163,74,0.12);
+  border-color: rgba(22,163,74,0.25);
+}
+
+.admin-panel .pill--danger {
+  color: #dc2626;
+  background: rgba(220,38,38,0.12);
+  border-color: rgba(220,38,38,0.25);
+}
+
+/* ====================== */
+/* 📊 No Users            */
+/* ====================== */
+.admin-panel .no-users {
+  padding: 20px;
+  text-align: center;
+  font-style: italic;
+  color: #94a3b8;
+  background-color: #f8fafc;
+  border-radius: 8px;
+}
+
+/* ====================== */
+/* ⏳ Loading             */
+/* ====================== */
+.admin-panel .loading {
+  text-align: center;
+  padding: 50px;
+  font-size: 1.2rem;
+  color: #94a3b8;
+}
+
+/* ====================== */
+/* 📱 Responsive          */
+/* ====================== */
+@media (max-width: 768px) {
+  .admin-panel {
+    padding: 20px 15px;
+    padding-top: 160px;
+  }
+  
+  .admin-panel .filter-controls,
+  .admin-panel .form-row {
+    flex-direction: column;
+  }
+
+  .admin-panel .users-table tbody tr {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 12px 10px;
+  }
+
+  .admin-panel .users-table th {
+    display: none;
+  }
+
+  .admin-panel .users-table td {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #e2e8f0;
+  }
+
+  .admin-panel .users-table td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: #18207A;
+    margin-right: 8px;
+  }
+  
+  .admin-panel .users-table td:last-child {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+}
+/* Warning button - Professional orange */
+.admin-panel .btn-warning {
+  background: white; /* or transparent if you want it blank */
+  color: #f59e0b;
+  border: 1px solid #f59e0b;
+  transition: 0.2s;
+}
+
+.admin-panel .btn-warning:hover {
+  background: #f59e0b;
+  color: white;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(245, 158, 11, 0.2);
+}
+
+/* Footer */
+.dashboard-footer {
+  background: white;
+  padding: 1.5rem 0;
+  border-top: 1px solid #e9ecef;
+}
+
+.footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer-links {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.footer-links a {
+  color: #6c757d;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: #18207A;
+}
+/* Improve mobile responsiveness */
+@media (max-width: 576px) {
+    .admin-panel {
+        padding: 15px 10px !important;
+        padding-top: 120px !important;
+    }
+    
+    .admin-panel .page-title {
+        font-size: 1.5rem !important;
+    }
+    
+    .admin-panel .users-table td {
+        font-size: 12px !important;
+        padding: 8px 5px !important;
+    }
+}

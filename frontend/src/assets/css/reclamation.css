@@ -1,0 +1,222 @@
+/* Reclamation Form Styles */
+.reclamation-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.reclamation-modal-container {
+  background: white;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 500px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  animation: reclamation-modal-appear 0.3s ease;
+}
+
+@keyframes reclamation-modal-appear {
+  from { 
+    opacity: 0; 
+    transform: translateY(-20px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+.reclamation-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.reclamation-modal-header h3 {
+  margin: 0;
+  color: #333;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.reclamation-modal-close {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #999;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.2s;
+}
+
+.reclamation-modal-close:hover {
+  background: #f5f5f5;
+  color: #333;
+}
+
+.reclamation-modal-body {
+  padding: 20px;
+}
+
+.reclamation-modal-section {
+  margin-bottom: 20px;
+}
+
+.reclamation-modal-section h4 {
+  margin: 0 0 15px 0;
+  color: #444;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 8px;
+}
+
+.reclamation-form-group {
+  margin-bottom: 1rem;
+}
+
+.reclamation-form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #333;
+  font-size: 0.9rem;
+}
+
+.reclamation-form-input,
+.reclamation-form-textarea,
+.reclamation-form-select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: all 0.2s;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+.reclamation-form-input:focus,
+.reclamation-form-textarea:focus,
+.reclamation-form-select:focus {
+  outline: none;
+  border-color: #4a90e2;
+  box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.2);
+}
+
+.reclamation-form-textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.reclamation-modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding: 20px;
+  border-top: 1px solid #eaeaea;
+}
+
+.reclamation-btn-secondary {
+  background: #f5f5f5;
+  color: #333;
+  border: 1px solid #ddd;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.reclamation-btn-secondary:hover:not(:disabled) {
+  background: #e8e8e8;
+}
+
+.reclamation-btn-primary {
+  background: linear-gradient(135deg, #18207A 0%, #0f1450 100%);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 2px 4px rgba(24, 32, 122, 0.3);
+}
+
+.reclamation-btn-primary:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(24, 32, 122, 0.4);
+}
+
+.reclamation-btn-primary:disabled,
+.reclamation-btn-secondary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.reclamation-product-info {
+  background: #f9f9f9;
+  padding: 15px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  border-left: 4px solid #18207A;
+}
+
+.reclamation-product-info h4 {
+  margin: 0 0 10px 0;
+  color: #18207A;
+  font-size: 1rem;
+}
+
+.reclamation-product-info p {
+  margin: 5px 0;
+  color: #555;
+  font-size: 0.9rem;
+}
+
+.reclamation-product-info strong {
+  color: #333;
+}
+
+/* Responsive adjustments */
+@media (max-width: 576px) {
+  .reclamation-modal-container {
+    width: 95%;
+    margin: 10px;
+  }
+  
+  .reclamation-modal-header {
+    padding: 15px;
+  }
+  
+  .reclamation-modal-body {
+    padding: 15px;
+  }
+  
+  .reclamation-modal-footer {
+    padding: 15px;
+    flex-direction: column;
+  }
+  
+  .reclamation-btn-secondary,
+  .reclamation-btn-primary {
+    width: 100%;
+  }
+}

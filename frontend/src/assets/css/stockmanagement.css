@@ -1,0 +1,575 @@
+/* ====================== */
+/* 🌍 Global Styles       */
+/* ====================== */
+body {
+  background-color: #F5F9FF;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 14px; /* slightly smaller */
+  padding-top: 180px;
+  color: #2c3e50;
+}
+
+
+
+/* ====================== */
+/* 📦 Cards & Stats       */
+/* ====================== */
+.stock-dashboard .card {
+  border-radius: 10px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 1.2rem;
+}
+
+.stock-dashboard .card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+.stock-dashboard .stats-card {
+  text-align: center;
+  padding: 18px;
+}
+
+.stock-dashboard .stats-number {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 8px 0;
+}
+
+.stock-dashboard .stats-label {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.stock-dashboard .stats-icon {
+  font-size: 1.8rem;
+  margin-bottom: 8px;
+}
+
+/* ====================== */
+/* 🔴 Status Colors       */
+/* ====================== */
+.stock-dashboard .status-available {
+  color: #2ecc71;
+  font-weight: bold;
+}
+
+.stock-dashboard .status-unavailable {
+  color: #e74c3c;
+  font-weight: bold;
+}
+
+.stock-dashboard .stock-low {
+  color: #f39c12;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+/* ====================== */
+/* 📝 Table               */
+/* ====================== */
+.table th, .table td {
+  font-size: 13px;
+  vertical-align: middle;
+  padding: 10px 8px;
+}
+
+.stock-dashboard .material-card {
+  border-left: 3px solid #18207A;
+}
+
+/* ====================== */
+/* 🔍 Search Box          */
+/* ====================== */
+.stock-dashboard .search-box input {
+  padding-left: 35px;
+  height: 34px;
+  font-size: 13px;
+}
+
+/* ====================== */
+/* 🎨 Buttons             */
+/* ====================== */
+button, .btn {
+  font-size: 13px;
+  padding: 6px 12px;
+  border-radius: 7px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Primary button */
+.stock-dashboard .btn-primary {
+  background-color: #18207A;
+  border-color: #18207A;
+  color: #fff;
+}
+.stock-dashboard .btn-primary:hover {
+  background-color: #4a5adb;
+  border-color: #4a5adb;
+  transform: translateY(-1px) scale(1.02);
+  box-shadow: 0 4px 10px rgba(24,32,122,0.4);
+}
+
+/* Edit button */
+.stock-dashboard .edit-btn {
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+/* ====================== */
+/* ✨ Modern 3D Buttons     */
+/* ====================== */
+.btn-add-modern,
+.btn-show-more {
+  position: relative;
+  overflow: hidden;
+  color: #18207A; /* default text color */
+  font-weight: 600;
+  font-size: 13px;
+  padding: 6px 14px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: linear-gradient(145deg, #ffffff, #e0e5ec); /* subtle 3D gradient */
+  box-shadow: 0 5px 8px rgba(24,32,122,0.4), 0 8px 15px rgba(24,32,122,0.25);
+  transition: all 0.4s ease; /* smooth transition */
+  z-index: 0;
+  margin-bottom: 10px;
+}
+
+.btn-add-modern::before,
+.btn-show-more::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(90deg, #18207A, #4876e1); /* principal color fade for hover */
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  border-radius: 10px;
+  z-index: -1;
+}
+
+.btn-add-modern:hover::before,
+.btn-show-more:hover::before {
+  opacity: 1;
+}
+
+.btn-add-modern:hover,
+.btn-show-more:hover {
+  color: #fff; /* text becomes white */
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 8px 12px rgba(24,32,122,0.5), 0 12px 25px rgba(24,32,122,0.35);
+}
+
+/* ====================== */
+/* 🖼 Modal               */
+/* ====================== */
+.modal-content {
+  font-size: 14px;
+}
+
+.modal-title {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* ====================== */
+/* ⏳ Loading             */
+/* ====================== */
+.stock-dashboard .loading {
+  font-size: 1.1rem;
+}
+/* ====================== */
+/* 📊 Statistics Cards  */
+/* ====================== */
+.stats-card {
+  border-radius: 12px;
+  background-color: #ffffff;
+  box-shadow: 0 6px 12px rgba(24,32,122,0.15), 0 10px 20px rgba(24,32,122,0.1);
+  padding: 30px 20px; /* bigger padding */
+  text-align: center;
+  transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.4s ease, color 0.4s ease;
+}
+
+.stats-card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 14px 24px rgba(24,32,122,0.35), 0 20px 36px rgba(24,32,122,0.25);
+  background: linear-gradient(135deg, #18207A, #397ecc);
+  color: #ffffff;
+}
+
+.stats-card .stats-number {
+  font-size: 2.5rem; /* larger */
+  font-weight: 700;
+  margin: 12px 0;
+  transition: color 0.4s ease;
+}
+
+.stats-card .stats-label {
+  font-size: 1.2rem; /* larger */
+  font-weight: 500;
+  transition: color 0.4s ease;
+}
+
+.stats-card .stats-icon {
+  font-size: 2.2rem; /* larger */
+  margin-bottom: 10px;
+  transition: color 0.4s ease;
+}
+
+/* Change icon colors on hover to match white text */
+.stats-card:hover .stats-icon,
+.stats-card:hover .stats-number,
+.stats-card:hover .stats-label {
+  color: #ffffff;
+}
+/* ====================== */
+/* 📊 Show Chart Button  */
+/* ====================== */
+.btn-chart-toggle {
+  position: relative;
+  overflow: hidden;
+  color: #18207A; /* default text color */
+  font-weight: 600;
+  font-size: 13px;
+  padding: 6px 14px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: linear-gradient(145deg, #ffffff, #e0e5ec); /* subtle 3D gradient */
+  box-shadow: 0 5px 8px rgba(24,32,122,0.4), 0 8px 15px rgba(24,32,122,0.25);
+  transition: all 0.4s ease; /* smooth transition */
+  z-index: 0;
+  margin-bottom: 10px;
+}
+
+.btn-chart-toggle::before {
+  content: '';
+  position: absolute;
+  top: 0; 
+  left: 0; 
+  right: 0; 
+  bottom: 0;
+  background: linear-gradient(90deg, #18207A, #4876e1); /* principal color fade for hover */
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  border-radius: 10px;
+  z-index: -1;
+}
+
+.btn-chart-toggle:hover::before {
+  opacity: 1;
+}
+
+.btn-chart-toggle:hover {
+  color: #fff; /* text becomes white */
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 8px 12px rgba(24,32,122,0.5), 0 12px 25px rgba(24,32,122,0.35);
+}
+
+.btn-chart-toggle i {
+  font-size: 1.1rem;
+  transition: transform 0.35s ease;
+}
+
+.btn-chart-toggle:hover i {
+  transform: rotate(15deg) scale(1.2);
+}
+
+.btn-chart-toggle:active {
+  transform: translateY(0) scale(0.97);
+  box-shadow: 0 4px 10px rgba(24,32,122,0.3);
+}
+/*-------------------------------------------------------------------------------------------*/
+.search-box {
+  position: relative;
+  width: 100%;
+}
+
+.search-box .search-icon {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+  color: #888;
+  font-size: 16px;
+  pointer-events: none; /* Prevent blocking input clicks */
+}
+
+.search-box .search-input {
+  padding-left: 40px; /* space for the icon */
+  border-radius: 8px;
+}
+/* Wrapper for select with icon */
+.select-box {
+  position: relative;
+  width: 100%;
+}
+
+.select-box .select-icon {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+  color: #555;
+  font-size: 16px;
+  pointer-events: none;
+}
+
+/* Bigger, modern select */
+.custom-select {
+  padding-left: 40px; /* space for the icon */
+  height: 48px; /* make it same height as search input */
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  transition: all 0.3s ease;
+}
+
+/* Hover + focus effect */
+.custom-select:focus {
+  border-color: #18207A;
+  box-shadow: 0 0 6px rgba(24, 32, 122, 0.3);
+}
+
+
+
+
+/* Light/Dark theme tokens */
+:root {
+  --bg: #f5f7fb;
+  --card: #ffffff;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --primary: #18207A;
+  --primary-600: #134698;
+  --border: #e5e7eb;
+  --success: #16a34a;
+  --danger: #dc2626;
+  --warn: #f59e0b;
+}
+
+
+/* container background */
+.stock-dashboard {
+  background: var(--bg);
+  min-height: 100vh;
+  color: var(--text);
+}
+
+/* Title */
+.page-title { color: var(--text); font-weight: 700; }
+
+/* Cards */
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; }
+.stats-card { padding: 18px; text-align: left; }
+.stats-icon { font-size: 18px; margin-bottom: 6px; }
+.stats-number { font-weight: 700; font-size: 28px; color: var(--text); }
+.stats-label { color: var(--muted); font-size: 14px; }
+
+/* Sticky filter bar like mockup */
+.filters-sticky { position: sticky; top: 72px; z-index: 20; box-shadow: 0 1px 0 rgba(0,0,0,0.02); }
+
+/* Search box */
+.search-box { position: relative; }
+.search-icon { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); }
+.search-input { padding-left: 40px; height: 44px; border-radius: 10px; }
+
+/* Selects with leading icons */
+.select-box { position: relative; }
+.select-icon { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); }
+.custom-select { height: 44px; border-radius: 10px; padding-left: 40px; }
+
+/* Buttons */
+.btn-add-modern,
+.btn-chart-toggle {
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--text);
+  border-radius: 10px;
+  padding: 8px 12px;
+  font-weight: 600;
+}
+.btn-add-modern i, .btn-chart-toggle i { margin-right: 6px; }
+.btn-add-modern:hover, .btn-chart-toggle:hover {
+  border-color: var(--primary);
+  color: #fff;
+  background: var(--primary);
+}
+.btn-add-modern.active { background: var(--primary); color: #fff; }
+
+
+/* Table */
+.table thead th { color: var(--muted); font-weight: 600; border-bottom: 1px solid var(--border); }
+.table tbody td { color: var(--text); }
+.table-hover tbody tr:hover { background: rgba(24,32,122,0.05); }
+
+/* Quantity thresholds (you already used these class names) */
+.status-available { color: var(--success) !important; }
+.status-unavailable { color: var(--danger) !important; }
+.stock-low { color: var(--warn) !important; }
+
+/* Status pills */
+.pill {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 4px 10px; border-radius: 999px; font-weight: 600; font-size: 12px;
+  border: 1px solid transparent;
+}
+.pill--success { color: var(--success); background: rgba(22,163,74,0.12); border-color: rgba(22,163,74,0.25); }
+.pill--danger  { color: var(--danger);  background: rgba(220,38,38,0.12); border-color: rgba(220,38,38,0.25); }
+
+/* Icon buttons in Actions */
+.icon-btn {
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--text);
+  border-radius: 8px;
+  padding: 6px 8px;
+}
+.icon-btn:hover { border-color: var(--primary); color: var(--primary); }
+.icon-btn.danger:hover { border-color: var(--danger); color: var(--danger); }
+
+/* Pagination */
+.pagination-nav { display: inline-flex; gap: 6px; }
+.page-btn {
+  min-width: 36px; height: 36px; padding: 0 10px; border-radius: 10px;
+  border: 1px solid var(--border); background: var(--card); color: var(--text); font-weight: 600;
+}
+.page-btn.active, .page-btn:hover { background: var(--primary); color: #fff; border-color: var(--primary); }
+
+/* Minor */
+.fw-500 { font-weight: 600; }
+
+
+/* Notification Styles */
+.notification-container {
+  position: relative;
+  
+}
+
+.btn-notification {
+  background: transparent;
+  border: 1px solid grey;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #18207A;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.btn-notification:hover {
+  background-color: #18207A;
+  color: #f8f9fa;
+}
+
+.notification-badge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: #dc3545;
+  color: white;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  font-size: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.notification-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 350px;
+  background: white;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  margin-top: 8px;
+}
+
+.notification-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  border-bottom: 1px solid #dee2e6;
+  background-color: #f8f9fa;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.notification-header h6 {
+  margin: 0;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.btn-clear-all {
+  background: none;
+  border: none;
+  color: #6c757d;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.btn-clear-all:hover {
+  color: #dc3545;
+}
+
+.notification-list {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.notification-item {
+  padding: 12px 16px;
+  border-bottom: 1px solid #f1f1f1;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.notification-item:hover {
+  background-color: #f8f9fa;
+}
+
+.notification-item.unread {
+  background-color: #e8f4ff;
+  font-weight: 500;
+}
+
+.notification-item.read {
+  background-color: white;
+  opacity: 0.8;
+}
+
+.notification-message {
+  margin-bottom: 4px;
+  font-size: 14px;
+}
+
+.notification-time {
+  font-size: 12px;
+  color: #6c757d;
+}
+.notification-separator {
+  border: 0;
+  border-top: 1px solid #18207A;
+  margin: 8px 0;
+}
+
+

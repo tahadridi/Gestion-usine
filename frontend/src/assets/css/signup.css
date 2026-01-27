@@ -1,0 +1,202 @@
+/* Signup.css */
+.admin-signup-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f8fafc;
+  padding: 20px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+.admin-signup-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  width: 100%;
+  max-width: 450px;
+}
+
+.admin-signup-logo-container {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.admin-signup-logo-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 12px;
+  background-color: #6366f1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+}
+
+.admin-signup-logoSvg {
+  color: #ffffff;
+}
+
+.admin-signup-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0 0 8px 0;
+}
+
+.admin-signup-subtitle {
+  font-size: 14px;
+  color: #6b7280;
+  margin: 0;
+}
+
+.admin-signup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.admin-signup-inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.admin-signup-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+}
+
+.admin-signup-inputContainer {
+  position: relative;
+}
+
+.admin-signup-inputIcon {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 12px;
+  display: flex;
+  align-items: center;
+  color: #9ca3af;
+}
+
+.admin-signup-input {
+  width: 100%;
+  padding: 12px 12px 12px 40px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 14px;
+  box-sizing: border-box;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.admin-signup-input:focus {
+  outline: none;
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+}
+
+.admin-signup-passwordToggle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 12px;
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #9ca3af;
+}
+
+.admin-signup-toggleIcon {
+  color: #9ca3af;
+}
+
+.admin-signup-passwordHint {
+  font-size: 12px;
+  color: #6b7280;
+  margin: 4px 0 0 0;
+}
+
+.admin-signup-button {
+  padding: 12px 16px;
+  background-color: #18207A;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: background-color 0.2s;
+  margin-top: 10px;
+}
+
+.admin-signup-button:hover {
+  background-color: #134698;
+}
+
+.admin-signup-buttonDisabled {
+  padding: 12px 16px;
+  background-color: #9ca3af;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: not-allowed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.admin-signup-spinner {
+  animation: admin-signup-spin 1s linear infinite;
+}
+
+@keyframes admin-signup-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.admin-signup-footer {
+  margin-top: 30px;
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.admin-signup-footerText {
+  font-size: 14px;
+  color: #6b7280;
+  margin: 0 0 10px 0;
+}
+
+.admin-signup-footerLink {
+  color: #6366f1;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.admin-signup-footerLink:hover {
+  text-decoration: underline;
+}
+
+.admin-signup-copyright {
+  font-size: 12px;
+  color: #9ca3af;
+  margin: 0;
+}

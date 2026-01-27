@@ -1,0 +1,213 @@
+.profile-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 2rem 1rem;
+  background: linear-gradient(135deg, #f4f5f9, #c3cfe2);
+}
+
+.profile-wrapper {
+  width: 100%;
+  max-width: 600px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+}
+
+.profile-header h1 {
+  font-size: 1.9rem;
+  color: #2d3748;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.profile-header p {
+  font-size: 0.95rem;
+  color: #718096;
+  text-align: center;
+}
+
+.avatar-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem 0;
+}
+
+.avatar-wrapper {
+  position: relative;
+  width: 120px;
+  height: 120px;
+}
+
+.avatar-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #667eea;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.avatar-upload {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: #667eea;
+  border-radius: 50%;
+  padding: 0.4rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #fff;
+  transition: transform 0.2s ease;
+}
+
+.avatar-upload input {
+  display: none;
+}
+
+
+
+/* Info Section */
+.info-section {
+  background: rgba(247,250,252,0.7);
+  border-radius: 12px;
+  padding: 1rem;
+  margin-bottom: 2rem;
+}
+
+.info-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+}
+
+.info-label {
+  font-weight: 500;
+  color: #4a5568;
+}
+
+.info-value {
+  color: #2d3748;
+  font-weight: 500;
+}
+
+/* Form */
+.update-section h2 {
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #2d3748;
+}
+
+.form-label {
+  font-weight: 500;
+  color: #4a5568;
+  margin-top: 1rem;
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.65rem 1rem;
+  border-radius: 10px;
+  border: 1px solid #cbd5e0;
+  margin-top: 0.3rem;
+  transition: all 0.2s;
+}
+
+.form-input:focus {
+  border-color: #667eea;
+  box-shadow: 0 0 0 2px rgba(102,126,234,0.2);
+  outline: none;
+}
+
+/* Password */
+.password-input-wrapper {
+  position: relative;
+}
+
+.password-toggle-btn {
+  position: absolute;
+  right: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #a0aec0;
+}
+
+.password-validation-icon {
+  position: absolute;
+  right: 2.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Error / Success */
+.error-message {
+  color: #e53e3e;
+  margin-top: 0.5rem;
+}
+
+.success-message {
+  color: #38a169;
+  margin-top: 0.5rem;
+}
+
+/* Save Button */
+.button-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1.5rem;
+}
+
+.save-btn {
+  background: linear-gradient(135deg,#667eea,#764ba2);
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  transition: all 0.25s;
+}
+
+.save-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(102,126,234,0.4);
+}
+
+.save-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Account Info */
+.account-info-section {
+  margin-top: 2rem;
+  padding: 1rem;
+  border-radius: 12px;
+  background: rgba(247,250,252,0.7);
+}
+
+.account-info-section h2 {
+  font-weight: 600;
+  color: #2d3748;
+  margin-bottom: 0.8rem;
+}
+
+.account-info-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+}
+
+.status-active {
+  color: #48bb78;
+  font-weight: 500;
+}
