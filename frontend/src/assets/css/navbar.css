@@ -7,7 +7,7 @@
     max-width: 1090px;
     padding: 15px 30px;
     position: fixed;
-    top: 50px;
+    top: 0; /* Changed from 20px to 0 to eliminate gap */
     left: 50%;
     transform: translateX(-50%);
     z-index: 1000;

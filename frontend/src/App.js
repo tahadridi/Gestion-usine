@@ -20,6 +20,7 @@ import Reporting from "./components/Reporting";
 
 import { Toaster } from "react-hot-toast";
 import Layout from "./layout.js";
+import ProtectedRoute from "./components/ProtectedRoutes";
 
 function App() {
   const { authUser, checkAuth, isCheckingAuth } = useAuthStore();
@@ -47,77 +48,69 @@ function App() {
           <Route
             path="/fabrication"
             element={
-              authUser ? (
+              <ProtectedRoute allowedRoles={['admin', 'manager', 'operator', 'technician', 'supervisor']}>
                 <Layout>
                   <Fabrication />
                 </Layout>
-              ) : (
-                <Navigate to="/signin" />
-              )
+              </ProtectedRoute>
             }
           />
           <Route
             path="/production"
             element={
-              authUser ? (
+              <ProtectedRoute allowedRoles={['admin', 'manager']}>
                 <Layout>
                   <Production />
                 </Layout>
-              ) : (
-                <Navigate to="/signin" />
-              )
+              </ProtectedRoute>
             }
           />
           <Route
             path="/adminpage"
             element={
-              authUser ? (
+              <ProtectedRoute allowedRoles={['admin']}>
                 <Layout>
                   <Adminpage />
                 </Layout>
-              ) : (
-                <Navigate to="/signin" />
-              )
+              </ProtectedRoute>
             }
           />
           <Route
             path="/stockmanagement"
             element={
-              authUser ? (
+              <ProtectedRoute allowedRoles={['admin', 'manager']}>
                 <Layout>
                   <StockManagement />
                 </Layout>
-              ) : (
-                <Navigate to="/signin" />
-              )
+              </ProtectedRoute>
             }
           />
           <Route
             path="/Home"
             element={
-              authUser ? (
+              <ProtectedRoute allowedRoles={['admin']}>
                 <Layout>
                   <Home />
                 </Layout>
-              ) : (
-                <Navigate to="/signin" />
-              )
+              </ProtectedRoute>
             }
           />
           <Route
             path="/profile"
-            element={authUser ? <ProfilePage /> : <Navigate to="/signin" />}
+            element={
+              <ProtectedRoute>
+                <ProfilePage />
+              </ProtectedRoute>
+            }
           />
           <Route
             path="/admin"
             element={
-              authUser ? (
+              <ProtectedRoute allowedRoles={['admin']}>
                 <Layout>
                   <Admin />
                 </Layout>
-              ) : (
-                <Navigate to="/signin" />
-              )
+              </ProtectedRoute>
             }
           />
           <Route
@@ -128,32 +121,38 @@ function App() {
                   <Autoliv />
                 </Layout>
               ) : (
-                <Navigate to="/signin" />
+                <Autoliv />
               )
             }
           />
           <Route
             path="/reclamation"
             element={
-              authUser ? (
+              <ProtectedRoute>
                 <Layout>
                   <Reclamation />
                 </Layout>
-              ) : (
-                <Navigate to="/signin" />
-              )
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/reporting"
+            element={
+              <ProtectedRoute>
+                <Layout>
+                  <Reporting />
+                </Layout>
+              </ProtectedRoute>
             }
           />
 
           {/* Public routes */}
-           <Route path="/autoliv" element={<Autoliv />} />
-          <Route path="/signin" element={<SignIn />} />
-          <Route path="/signup" element={<SignUp />} />
+          <Route path="/signin" element={!authUser ? <SignIn /> : <Navigate to="/" />} />
+          <Route path="/signup" element={!authUser ? <SignUp /> : <Navigate to="/" />} />
 
           {/* Default redirect */}
+          <Route path="/" element={<Navigate to="/autoliv" />} />
           <Route path="*" element={<Navigate to="/autoliv" />} />
-
-          <Route path="/reporting" element={<Reporting />} />
         </Routes>
            
       </div>

@@ -12,7 +12,13 @@
   --shadow-hover: 0 15px 30px rgba(0, 0, 0, 0.15);
 }
 
-
+.asw3-homepage {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  position: relative;
+  top: 0;
+}
 
 .asw3-container {
   width: 100%;
@@ -722,5 +728,3 @@
   font-size: 14px;
   color: var(--text-color-light);
 }
-
-  

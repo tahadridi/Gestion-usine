@@ -70,20 +70,50 @@ const Navbar = () => {
   }
   if (!authUser) return null; // Only show admin navbar if logged in
 
-  const navItems = [
-    { path: '/Home', label: 'Dashboard' },
-    { path: '/fabrication', label: 'Fabrication' },
-    { path: '/production', label: 'Production' },
-    { path: '/adminpage', label: 'Add Products' },
-    { path: '/stockmanagement', label: 'Manage Stock' },
-    { path: '/admin', label: 'Manage Employees' },
-    { path: '/reporting', label: 'Reporting' },
-  ];
+  const getNavItems = () => {
+    const role = authUser?.role;
+    
+    if (role === 'admin') {
+      return [
+        { path: '/Home', label: 'Dashboard' },
+        { path: '/fabrication', label: 'Fabrication' },
+        { path: '/production', label: 'Production' },
+        { path: '/adminpage', label: 'Add Products' },
+        { path: '/stockmanagement', label: 'Manage Stock' },
+        { path: '/admin', label: 'Manage Employees' },
+        { path: '/reporting', label: 'Reporting' },
+      ];
+    }
+    
+    if (role === 'manager') {
+      return [
+        { path: '/stockmanagement', label: 'Manage Stock' },
+        { path: '/fabrication', label: 'Fabrication' },
+        { path: '/production', label: 'Production' },
+        { path: '/reporting', label: 'Reporting' },
+      ];
+    }
+    
+    // Default for operator and others
+    return [
+      { path: '/fabrication', label: 'Fabrication' },
+      { path: '/reporting', label: 'Reporting' },
+    ];
+  };
+
+  const navItems = getNavItems();
+
+  const getHomePath = () => {
+    const role = authUser?.role;
+    if (role === 'admin') return '/Home';
+    if (role === 'manager') return '/stockmanagement';
+    return '/fabrication';
+  };
 
   return (
     <header className={`navbar ${menuOpen ? 'menu-open' : ''}`}>
       <div className="navbar-container">
-        <Link to="/Home" className="navbar-logo" onClick={() => setMenuOpen(false)}>
+        <Link to={getHomePath()} className="navbar-logo" onClick={() => setMenuOpen(false)}>
           <img src={logo} alt="Company Logo" />
         </Link>
 

@@ -29,7 +29,7 @@ const handleSubmit = async (e) => {
     // Redirect based on user role
     if (result.user?.role === 'admin') {
         navigate("/Home");
-    } else if (result.user?.role === 'manager' && result.user?.department === 'production') {
+    } else if (result.user?.role === 'manager') {
         navigate("/stockmanagement");
     } else {
         navigate("/fabrication", { state: { userEmail: result.user?.email } });
