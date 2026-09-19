@@ -2,3 +2,6 @@
 .env.local
 .vscode/
 node_modules/
+
+# Dev seed scripts
+backend/*seed*.js
